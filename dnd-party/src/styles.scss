@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import '~@taiga-ui/core/styles/taiga-ui-local';
+
+//Fonts
+@font-face {
+  font-family: "Newrocker";
+  src: local("Newrocker"), url(./assets/fonts/NewRocker/Newrocker-Gy5a.ttf) format("truetype");
+}
+
+//Color Variables
+:root {
+  --primary-text-color: #FBFCFC;
+  --secondary-text-color: #1D1D1E;
+
+  --primary-bg-color: #35345F;
+  --secondary-bg-color: #34495F;
+
+  --primary-button-color: #474680;
+  --secondary-button-color: #466280;
+}
+
+h1 {
+  font-size: x-large;
+  font-family: 'newrocker';
+  color: var(--primary-text-color);
+}
+
+

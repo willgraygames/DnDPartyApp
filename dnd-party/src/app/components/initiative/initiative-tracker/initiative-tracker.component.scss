@@ -1,5 +1,17 @@
 :host {
   background-color: var(--primary-bg-color);
+  display: inline-block;
+  width: 100%;
+  padding-top:104px;
+}
+
+.cycle {
+  position:fixed;
+  bottom: 32px;
+  right: 32px;
   display: block;
-  height: 100%;
+  background-color: #7877B5;
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
 }

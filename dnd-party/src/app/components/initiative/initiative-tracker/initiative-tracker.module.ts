@@ -4,14 +4,12 @@ import { InitiativeTrackerComponent } from './initiative-tracker.component';
 import { InitiativeTrackerRoutingModule } from './initiative-tracker-routing.module';
 import { InitiativeMemberModule } from '../initiative-member';
 
-
-
 @NgModule({
   declarations: [InitiativeTrackerComponent],
   imports: [
     CommonModule,
     InitiativeTrackerRoutingModule,
-    InitiativeMemberModule
+    InitiativeMemberModule,
   ],
   exports: [
     InitiativeTrackerComponent

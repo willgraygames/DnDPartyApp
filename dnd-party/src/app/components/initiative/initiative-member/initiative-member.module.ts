@@ -3,6 +3,9 @@ import { CommonModule } from '@angular/common';
 
 import { InitiativeMemberRoutingModule } from './initiative-member-routing.module';
 import { InitiativeMemberComponent } from './initiative-member.component';
+import { TuiExpandModule } from '@taiga-ui/core';
+import { StatBubbleModule } from 'src/app/ui';
+import { TuiProgressModule } from '@taiga-ui/kit';
 
 
 @NgModule({
@@ -11,7 +14,10 @@ import { InitiativeMemberComponent } from './initiative-member.component';
   ],
   imports: [
     CommonModule,
-    InitiativeMemberRoutingModule
+    InitiativeMemberRoutingModule,
+    TuiExpandModule,
+    StatBubbleModule,
+    TuiProgressModule
   ],
   exports: [
     InitiativeMemberComponent

@@ -19,12 +19,26 @@
   --secondary-bg-color: #34495F;
 
   --primary-button-color: #474680;
-  --secondary-button-color: #466280;
+  --secondary-button-color: #7877B5;
+
+  --primary-accent-color: #5958A1;
+
+  --positive-health-color: #62A158;
+  --middle-health-color: #C1AA6E;
+  --negative-health-color: #AF4545;
 }
 
 h1 {
   font-size: x-large;
   font-family: 'newrocker';
+  color: var(--primary-text-color);
+}
+
+h2 {
+  font-size: x-large;
+  font-weight: bold;
+  line-height: 24px;
+  height: 24px;
   color: var(--primary-text-color);
 }
 

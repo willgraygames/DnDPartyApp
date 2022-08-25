@@ -1,4 +1,3 @@
-<h1 class="ml-1">Initiative Order</h1>
 <initiative-member *ngFor="let member of initiative" [member]="member"></initiative-member>
-<button class="cycle" (click)="cycleInitiative()">
+<button tuiIconButton type="button" [shape]="'rounded'" [size]="'xl'" icon="tuiIconPlayLarge" class="cycle" (click)="cycleInitiative()">
 </button>

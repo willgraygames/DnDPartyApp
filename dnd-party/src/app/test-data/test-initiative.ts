@@ -1,11 +1,11 @@
-import { InitiativeMember } from "../components/initiative/initiative-member/initiative-member";
+import { Member } from '../components';
 
-export const TEST_INITIATIVE: InitiativeMember[] = [
+export const TEST_INITIATIVE: Member[] = [
   {
-    id: "hangedKing",
-    name: "Raeas",
+    id: 'hangedKing',
+    name: 'Raeas',
     initiative: 3,
-    image: "assets/images/Raeas.png",
+    image: 'assets/images/Raeas.png',
     totalHP: 100,
     currentHP: 78,
     armorClass: 17,
@@ -18,10 +18,10 @@ export const TEST_INITIATIVE: InitiativeMember[] = [
     charisma: 11,
   },
   {
-    id: "zephyr",
-    name: "Chris",
+    id: 'zephyr',
+    name: 'Chris',
     initiative: 8,
-    image: "assets/images/Chris.png",
+    image: 'assets/images/Chris.png',
     totalHP: 40,
     currentHP: 5,
     armorClass: 12,
@@ -31,13 +31,13 @@ export const TEST_INITIATIVE: InitiativeMember[] = [
     constitution: 11,
     intelligence: 15,
     wisdom: 13,
-    charisma: 13
+    charisma: 13,
   },
   {
-    id: "dabreiya",
-    name: "Tungsten",
+    id: 'dabreiya',
+    name: 'Tungsten',
     initiative: 15,
-    image: "assets/images/Tungsten.png",
+    image: 'assets/images/Tungsten.png',
     totalHP: 67,
     currentHP: 35,
     armorClass: 15,
@@ -47,13 +47,13 @@ export const TEST_INITIATIVE: InitiativeMember[] = [
     constitution: 12,
     intelligence: 14,
     wisdom: 12,
-    charisma: 9
+    charisma: 9,
   },
   {
-    id: "linktree",
-    name: "Pruni",
+    id: 'linktree',
+    name: 'Pruni',
     initiative: 17,
-    image: "assets/images/Pruni.png",
+    image: 'assets/images/Pruni.png',
     totalHP: 63,
     currentHP: 63,
     armorClass: 16,
@@ -63,13 +63,13 @@ export const TEST_INITIATIVE: InitiativeMember[] = [
     constitution: 11,
     intelligence: 11,
     wisdom: 13,
-    charisma: 11
+    charisma: 11,
   },
   {
-    id: "linktree1",
-    name: "Pruni",
+    id: 'linktree1',
+    name: 'Pruni',
     initiative: 6,
-    image: "assets/images/Pruni.png",
+    image: 'assets/images/Pruni.png',
     totalHP: 63,
     currentHP: 57,
     armorClass: 16,
@@ -79,13 +79,13 @@ export const TEST_INITIATIVE: InitiativeMember[] = [
     constitution: 11,
     intelligence: 11,
     wisdom: 13,
-    charisma: 11
+    charisma: 11,
   },
   {
-    id: "linktree2",
-    name: "Pruni",
+    id: 'linktree2',
+    name: 'Pruni',
     initiative: 17,
-    image: "assets/images/Pruni.png",
+    image: 'assets/images/Pruni.png',
     totalHP: 63,
     currentHP: 22,
     armorClass: 16,
@@ -95,6 +95,6 @@ export const TEST_INITIATIVE: InitiativeMember[] = [
     constitution: 11,
     intelligence: 11,
     wisdom: 13,
-    charisma: 11
-  }
-]
+    charisma: 11,
+  },
+];

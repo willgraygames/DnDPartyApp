@@ -29,6 +29,7 @@ import { provideFirestore,getFirestore } from '@angular/fire/firestore';
     provideAuth(() => getAuth()),
     provideDatabase(() => getDatabase()),
     provideFirestore(() => getFirestore()),
+
 ],
   providers: [{provide: TUI_SANITIZER, useClass: NgDompurifySanitizer}, ScreenTrackingService,UserTrackingService],
   bootstrap: [AppComponent]

@@ -1,3 +1,13 @@
-<initiative-member *ngFor="let member of initiative" [member]="member"></initiative-member>
-<button tuiIconButton type="button" [shape]="'rounded'" [size]="'xl'" icon="tuiIconPlayLarge" class="cycle" (click)="cycleInitiative()">
-</button>
+<initiative-member
+  *ngFor="let member of members$ | async"
+  [member]="member"
+></initiative-member>
+<button
+  tuiIconButton
+  type="button"
+  [shape]="'rounded'"
+  [size]="'xl'"
+  icon="tuiIconPlayLarge"
+  class="cycle"
+  (click)="cycleInitiative()"
+></button>

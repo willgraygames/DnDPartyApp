@@ -110,6 +110,16 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "dnd-party:build:production",
+            "firebaseProject": "dndpartymanager-5c118",
+            "firebaseHostingSite": "dndpartymanager-5c118"
+          }
         }
       }
     }

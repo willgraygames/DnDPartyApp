@@ -1,25 +1,26 @@
-import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
-import { InitiativeMember } from './initiative-member';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  Input,
+  OnInit,
+} from '@angular/core';
+import { Member } from '../../member';
 
 @Component({
   selector: 'initiative-member',
   templateUrl: './initiative-member.component.html',
   styleUrls: ['./initiative-member.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class InitiativeMemberComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  @Input() member?: InitiativeMember;
+  @Input() member?: Member;
   expanded = false;
 
-  ngOnInit(): void {
-
-  }
+  ngOnInit(): void {}
 
   toggle(): void {
     this.expanded = !this.expanded;
   }
-
 }

@@ -7,6 +7,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderModule } from './components';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideAnalytics,getAnalytics,ScreenTrackingService,UserTrackingService } from '@angular/fire/analytics';
+import { provideAuth,getAuth } from '@angular/fire/auth';
+import { provideDatabase,getDatabase } from '@angular/fire/database';
+import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 
 @NgModule({
   declarations: [
@@ -18,8 +24,14 @@ import { HeaderModule } from './components';
     HeaderModule,
     BrowserAnimationsModule,
     TuiRootModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideAnalytics(() => getAnalytics()),
+    provideAuth(() => getAuth()),
+    provideDatabase(() => getDatabase()),
+    provideFirestore(() => getFirestore()),
+
 ],
-  providers: [{provide: TUI_SANITIZER, useClass: NgDompurifySanitizer}],
+  providers: [{provide: TUI_SANITIZER, useClass: NgDompurifySanitizer}, ScreenTrackingService,UserTrackingService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

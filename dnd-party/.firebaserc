@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "dndpartymanager-5c118": {
+      "hosting": {
+        "dnd-party": [
+          "dndpartymanager-5c118"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "dndpartymanager-5c118"
+  }
+}

@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'dashboard', pathMatch: 'full'},
+  { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
   {
     path: 'initiative-member',
     loadChildren: () =>
@@ -24,9 +24,20 @@ const routes: Routes = [
         (m) => m.PartyDashboardModule
       ),
   },
-  { path: 'dashboard',
-  loadChildren: () => import('./components/dashboard/dashboard.module').then
-  ((m) => m.DashboardModule) },
+  {
+    path: 'dashboard',
+    loadChildren: () =>
+      import('./components/dashboard/dashboard.module').then(
+        (m) => m.DashboardModule
+      ),
+  },
+  {
+    path: 'member',
+    loadChildren: () =>
+      import('./components/member/member/member.module').then(
+        (m) => m.MemberModule
+      ),
+  },
 ];
 
 @NgModule({

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { DungeonFirestoreService } from 'src/app/core/dungeon-firestore.service';
+import { DungeonFirestoreService } from 'src/app/core/services/dungeon/dungeon-firestore.service';
 import { Member } from './member';
 
 @Component({
@@ -9,12 +9,12 @@ import { Member } from './member';
   styleUrls: ['./member.component.scss'],
 })
 export class MemberComponent implements OnInit {
-  members$: Observable<Member[]>;
+  allMembers$: Observable<Member[]>;
   selectedMember: Member;
 
   constructor(private readonly dungeonService: DungeonFirestoreService) {}
 
   ngOnInit(): void {
-    this.members$ = this.dungeonService.getAll();
+    this.allMembers$ = this.dungeonService.getAll();
   }
 }

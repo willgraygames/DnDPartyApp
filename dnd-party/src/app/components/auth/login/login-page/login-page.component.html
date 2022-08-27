@@ -1,0 +1,19 @@
+<h1>Welcome to D&D Party Manager</h1>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div class="tui-row tui-row_sme">
+    <div class="tui-col_8">
+      <div class="tui-form__row">
+        <tui-input
+          tuiTextfieldExampleText="Email place"
+          formControlName="email"
+        ></tui-input>
+      </div>
+      <div class="tui-form__row">
+        <tui-input
+          tuiTextfieldExampleText="Password place"
+          formControlName="password"
+        ></tui-input>
+      </div>
+    </div>
+  </div>
+</form>

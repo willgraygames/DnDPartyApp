@@ -2,7 +2,11 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
+  {
+    path: '',
+    loadChildren: () =>
+      import('./components/auth/auth.module').then((m) => m.AuthModule),
+  },
   {
     path: 'initiative-member',
     loadChildren: () =>
@@ -37,6 +41,11 @@ const routes: Routes = [
       import('./components/member/member/member.module').then(
         (m) => m.MemberModule
       ),
+  },
+  {
+    path: '**',
+    redirectTo: '',
+    pathMatch: 'full',
   },
 ];
 

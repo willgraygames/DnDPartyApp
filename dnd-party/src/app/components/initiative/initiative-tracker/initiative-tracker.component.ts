@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { doc } from 'firebase/firestore';
 import { first, firstValueFrom, map, Observable, take } from 'rxjs';
-import { DungeonFirestoreService } from 'src/app/core/dungeon-firestore.service';
+import { DungeonFirestoreService } from 'src/app/core/services/dungeon/dungeon-firestore.service';
 import { TEST_INITIATIVE } from 'src/app/test-data/test-initiative';
 import { Member } from '../../member';
 

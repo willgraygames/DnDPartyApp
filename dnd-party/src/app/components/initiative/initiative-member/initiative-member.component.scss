@@ -38,5 +38,6 @@ img {
 .progress {
   color: var(--positive-health-color);
   background-color: var(--primary-accent-color);
+  --tui-base-03: var(--primary-accent-color);
   border-radius: 8px;
 }

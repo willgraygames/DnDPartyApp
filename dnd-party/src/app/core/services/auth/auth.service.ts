@@ -5,7 +5,7 @@ import {
   signInWithEmailAndPassword,
 } from '@angular/fire/auth';
 import { signOut } from 'firebase/auth';
-import { LoginData } from './interfaces';
+import { LoginData } from './interfaces/login-data';
 
 @Injectable({
   providedIn: 'root',

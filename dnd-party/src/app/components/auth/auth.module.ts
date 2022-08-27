@@ -2,10 +2,12 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { AuthRoutingModule } from './auth-routing.module';
-import { LoginPageModule } from './login';
+import { LoginFormModule, LoginPageModule } from './login';
+import { AuthService } from 'src/app/core';
 
 @NgModule({
   declarations: [],
-  imports: [CommonModule, AuthRoutingModule, LoginPageModule],
+  imports: [CommonModule, AuthRoutingModule, LoginPageModule, LoginFormModule],
+  providers: [AuthService],
 })
 export class AuthModule {}

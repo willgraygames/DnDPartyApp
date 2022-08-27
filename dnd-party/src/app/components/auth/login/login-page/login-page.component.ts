@@ -1,37 +1,24 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthService, LoginData } from 'src/app/core';
 
 @Component({
-  selector: 'app-login-page',
+  selector: 'login-page',
   templateUrl: './login-page.component.html',
   styleUrls: ['./login-page.component.scss'],
 })
 export class LoginPageComponent implements OnInit {
-  @Output() formData: EventEmitter<{
-    email: string;
-    password: string;
-  }> = new EventEmitter();
+  constructor(
+    private readonly authService: AuthService,
+    private readonly router: Router
+  ) {}
 
-  form: FormGroup;
+  ngOnInit(): void {}
 
-  constructor(private fb: FormBuilder) {}
-
-  ngOnInit(): void {
-    this.form = this.fb.group({
-      email: ['', [Validators.required, Validators.email]],
-      password: ['', Validators.required],
-    });
-  }
-
-  get email() {
-    return this.form.get('email');
-  }
-
-  get password() {
-    return this.form.get('password');
-  }
-
-  onSubmit() {
-    this.formData.emit(this.form.value);
+  login(loginData: LoginData) {
+    this.authService
+      .login(loginData)
+      .then(() => this.router.navigate(['/dashboard']))
+      .catch((e) => console.log(e.message));
   }
 }

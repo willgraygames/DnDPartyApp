@@ -1,0 +1,14 @@
+:host {
+  display: inline-block;
+  width: 100%;
+  max-width: 484px;
+  justify-content: center;
+  align-items: center;
+  padding-top: 36px;
+}
+
+tui-input, tui-input-password {
+  --tui-base-01: var(--primary-accent-color);
+  --tui-base-03: var(--primary-accent-color);
+  --tui-text-01: var(--primary-text-color);
+}

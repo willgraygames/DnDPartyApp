@@ -10,7 +10,7 @@ import {
   updateDoc,
 } from 'firebase/firestore';
 import { Observable } from 'rxjs';
-import { Member } from '../components';
+import { Member } from 'src/app/components';
 
 @Injectable({
   providedIn: 'root',

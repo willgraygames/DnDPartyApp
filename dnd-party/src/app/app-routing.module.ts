@@ -1,14 +1,21 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import {
+  AuthGuard,
+  canActivate,
+  redirectLoggedInTo,
+  redirectUnauthorizedTo,
+} from '@angular/fire/auth-guard';
+
+const redirectUnauthorizedToLogin = () => redirectUnauthorizedTo(['']);
+const redirectLoggedInToDashboard = () => redirectLoggedInTo(['dashboard']);
 
 const routes: Routes = [
-  { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
   {
-    path: 'initiative-member',
+    path: '',
     loadChildren: () =>
-      import(
-        './components/initiative/initiative-member/initiative-member.module'
-      ).then((m) => m.InitiativeMemberModule),
+      import('./components/auth/auth.module').then((m) => m.AuthModule),
+    ...canActivate(redirectLoggedInToDashboard),
   },
   {
     path: 'initiative-tracker',
@@ -16,6 +23,7 @@ const routes: Routes = [
       import(
         './components/initiative/initiative-tracker/initiative-tracker.module'
       ).then((m) => m.InitiativeTrackerModule),
+    ...canActivate(redirectUnauthorizedToLogin),
   },
   {
     path: 'party-dashboard',
@@ -23,6 +31,7 @@ const routes: Routes = [
       import('./components/party/party-dashboard/party-dashboard.module').then(
         (m) => m.PartyDashboardModule
       ),
+    ...canActivate(redirectUnauthorizedToLogin),
   },
   {
     path: 'dashboard',
@@ -30,6 +39,7 @@ const routes: Routes = [
       import('./components/dashboard/dashboard.module').then(
         (m) => m.DashboardModule
       ),
+    ...canActivate(redirectUnauthorizedToLogin),
   },
   {
     path: 'member',
@@ -37,6 +47,12 @@ const routes: Routes = [
       import('./components/member/member/member.module').then(
         (m) => m.MemberModule
       ),
+    ...canActivate(redirectUnauthorizedToLogin),
+  },
+  {
+    path: '**',
+    redirectTo: '',
+    pathMatch: 'full',
   },
 ];
 

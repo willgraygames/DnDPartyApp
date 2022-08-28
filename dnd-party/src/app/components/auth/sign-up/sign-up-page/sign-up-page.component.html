@@ -1,0 +1,11 @@
+<h1>Create a new account</h1>
+<login-form (formData)="register($event)"></login-form>
+<div class="mr-5 ml-5 form-buttons">
+  <div class="flex justify-between pb-6">
+    <div class="grid">
+      <label class="small-label">Already have one?</label>
+      <button [routerLink]="''">Back</button>
+    </div>
+    <button class="place-self-end" (click)="submitForm()">Sign Up</button>
+  </div>
+</div>

@@ -26,6 +26,8 @@
   --positive-health-color: #62A158;
   --middle-health-color: #C1AA6E;
   --negative-health-color: #AF4545;
+
+  background-color: var(--primary-bg-color);
 }
 
 h1 {
@@ -42,4 +44,27 @@ h2 {
   color: var(--primary-text-color);
 }
 
+label {
+  font-size:medium;
+  font-weight: 700;
+  font-style: normal;
+  color: var(--primary-text-color);
+}
 
+button {
+  width: 108px;
+  height: 48px;
+  display: block;
+  background-color: var(--secondary-button-color);
+  border-radius: 8px;
+  color: var(--primary-text-color);
+  font-size: large;
+  font-weight: 700;
+  &:visited {
+    background-color: var(--primary-bg-color);
+  }
+
+  &:hover {
+    background-color: var(--primary-button-color);
+  }
+}

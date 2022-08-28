@@ -17,10 +17,19 @@ export class SignUpPageComponent implements OnInit {
 
   ngOnInit(): void {}
 
+  /**
+   * Registers new user then logs them in
+   * @param data Login data taken from form
+   */
   register(data: LoginData) {
     this.authService
       .register(data)
-      .then(() => this.router.navigate(['/login']))
+      .then(() =>
+        this.authService
+          .login(data)
+          .then(() => this.router.navigate(['/dashboard']))
+          .catch((e) => console.log(e.message))
+      )
       .catch((e) => console.log(e.message));
   }
 

@@ -18,6 +18,10 @@ export class LoginPageComponent implements OnInit {
 
   ngOnInit(): void {}
 
+  /**
+   * Logs in user based on given LoginData
+   * @param loginData Login data taken from form
+   */
   login(loginData: LoginData) {
     this.authService
       .login(loginData)
@@ -25,6 +29,9 @@ export class LoginPageComponent implements OnInit {
       .catch((e) => console.log(e.message));
   }
 
+  /**
+   * Logs in user using Google sign-on
+   */
   loginWithGoogle() {
     this.authService
       .loginWithGoogle()

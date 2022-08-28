@@ -15,6 +15,9 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit(): void {}
 
+  /**
+   * Logs out currently logged in user
+   */
   logout() {
     this.authService
       .logout()

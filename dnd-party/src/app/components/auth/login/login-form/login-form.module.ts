@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { LoginFormRoutingModule } from './login-form-routing.module';
 import { LoginFormComponent } from './login-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {
@@ -20,7 +19,6 @@ import {
   declarations: [LoginFormComponent],
   imports: [
     CommonModule,
-    LoginFormRoutingModule,
     ReactiveFormsModule,
     TuiInputModule,
     TuiErrorModule,

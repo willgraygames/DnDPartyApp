@@ -25,6 +25,13 @@ export class LoginPageComponent implements OnInit {
       .catch((e) => console.log(e.message));
   }
 
+  loginWithGoogle() {
+    this.authService
+      .loginWithGoogle()
+      .then(() => this.router.navigate(['/dashboard']))
+      .catch((e) => console.log(e.message));
+  }
+
   submitForm() {
     this.loginForm.onSubmit();
   }

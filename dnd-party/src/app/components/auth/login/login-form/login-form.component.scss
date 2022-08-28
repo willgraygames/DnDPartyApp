@@ -1,10 +1,9 @@
 :host {
-  display: inline-block;
+  display: grid;
   width: 100%;
   max-width: 484px;
-  justify-content: center;
-  align-items: center;
   padding-top: 36px;
+  margin: auto;
 }
 
 tui-input, tui-input-password {
@@ -12,3 +11,9 @@ tui-input, tui-input-password {
   --tui-base-03: var(--primary-accent-color);
   --tui-text-01: var(--primary-text-color);
 }
+
+.small-label {
+  font-size: small;
+}
+
+

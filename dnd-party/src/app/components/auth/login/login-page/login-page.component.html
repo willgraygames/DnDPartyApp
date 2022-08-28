@@ -1,2 +1,18 @@
 <h1>Welcome to D&D Party Manager</h1>
 <login-form (formData)="login($event)"></login-form>
+<div class="mr-5 ml-5 form-buttons">
+  <div class="flex justify-between pb-6">
+    <div class="grid">
+      <label class="small-label">No account?</label>
+      <button [routerLink]="'/register'">Sign Up</button>
+    </div>
+    <button class="place-self-end" (click)="submitForm()">Login</button>
+  </div>
+  <button class="google w-full">
+    <tui-svg
+      src="assets\icons\icons8-google.svg"
+      class="icon relative -left-12 bottom-0.5"
+    ></tui-svg>
+    Sign in with Google
+  </button>
+</div>

@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService, LoginData } from 'src/app/core';
+import { LoginFormComponent } from '../login-form/login-form.component';
 
 @Component({
   selector: 'login-page',
@@ -8,6 +9,8 @@ import { AuthService, LoginData } from 'src/app/core';
   styleUrls: ['./login-page.component.scss'],
 })
 export class LoginPageComponent implements OnInit {
+  @ViewChild(LoginFormComponent) loginForm: LoginFormComponent;
+
   constructor(
     private readonly authService: AuthService,
     private readonly router: Router
@@ -20,5 +23,9 @@ export class LoginPageComponent implements OnInit {
       .login(loginData)
       .then(() => this.router.navigate(['/dashboard']))
       .catch((e) => console.log(e.message));
+  }
+
+  submitForm() {
+    this.loginForm.onSubmit();
   }
 }

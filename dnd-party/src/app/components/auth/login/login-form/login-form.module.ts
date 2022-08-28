@@ -9,7 +9,12 @@ import {
   TuiInputModule,
   TuiInputPasswordModule,
 } from '@taiga-ui/kit';
-import { TuiErrorModule, TuiTextfieldControllerModule } from '@taiga-ui/core';
+import {
+  TuiButtonModule,
+  TuiErrorModule,
+  TuiSvgModule,
+  TuiTextfieldControllerModule,
+} from '@taiga-ui/core';
 
 @NgModule({
   declarations: [LoginFormComponent],
@@ -23,6 +28,8 @@ import { TuiErrorModule, TuiTextfieldControllerModule } from '@taiga-ui/core';
     FormsModule,
     TuiInputPasswordModule,
     TuiTextfieldControllerModule,
+    TuiButtonModule,
+    TuiSvgModule,
   ],
   exports: [LoginFormComponent],
 })

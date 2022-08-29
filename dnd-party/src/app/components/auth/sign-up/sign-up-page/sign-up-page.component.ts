@@ -27,7 +27,14 @@ export class SignUpPageComponent implements OnInit {
       .then(() =>
         this.authService
           .login(data)
-          .then(() => this.router.navigate(['/dashboard']))
+          .then((userCredential) => {
+            const user = userCredential.user;
+            if (this.authService.checkUserExists(user.uid)) {
+              this.router.navigate(['/choose-user-type']);
+            } else {
+              this.router.navigate(['/dashboard']);
+            }
+          })
           .catch((e) => console.log(e.message))
       )
       .catch((e) => console.log(e.message));

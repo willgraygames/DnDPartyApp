@@ -1,0 +1,17 @@
+<h1>Are you a Dungeon Master or a Player?</h1>
+<div class="mr-5 ml-5 form-buttons">
+  <div class="justify-between pb-6 w-full">
+    <button
+      class="mb-20 w-full"
+      (click)="createNewUserWithRoles({ master: true })"
+    >
+      Dungeon Master
+    </button>
+    <button
+      class="place-self-end w-full"
+      (click)="createNewUserWithRoles({ player: true })"
+    >
+      Player
+    </button>
+  </div>
+</div>

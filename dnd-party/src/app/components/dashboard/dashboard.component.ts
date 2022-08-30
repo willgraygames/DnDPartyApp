@@ -26,6 +26,8 @@ export class DashboardComponent implements OnInit {
   }
 
   check() {
-    console.log(this.authService.getCurrentUserRoles());
+    this.authService.getCurrentUserRoles().subscribe((data) => {
+      console.log(data['roles'].player);
+    });
   }
 }

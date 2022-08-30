@@ -13,6 +13,7 @@ import {
   CollectionReference,
   doc,
   DocumentData,
+  setDoc,
 } from 'firebase/firestore';
 import { Observable } from 'rxjs';
 import { LoginData } from './interfaces/login-data';
@@ -61,7 +62,7 @@ export class AuthService {
       email: this.auth.currentUser?.email!,
       roles: roles,
     };
-    return addDoc(this.userCollection, newUser);
+    return setDoc(doc(this.userCollection, newUser.uid), newUser);
   }
 
   getCurrentUserRoles() {

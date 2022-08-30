@@ -24,4 +24,10 @@ export class DashboardComponent implements OnInit {
       .then(() => this.router.navigate(['']))
       .catch((e) => console.log(e.message));
   }
+
+  check() {
+    this.authService.getCurrentUserRoles().subscribe((data) => {
+      console.log(data['roles'].player);
+    });
+  }
 }

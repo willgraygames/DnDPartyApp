@@ -5,6 +5,7 @@ import { AuthRoutingModule } from './auth-routing.module';
 import { LoginFormModule, LoginPageModule } from './login';
 import { AuthService } from 'src/app/core';
 import { SignUpPageModule } from './sign-up';
+import { ChooseUserTypeModule } from './choose-user-type';
 
 @NgModule({
   declarations: [],
@@ -14,6 +15,7 @@ import { SignUpPageModule } from './sign-up';
     LoginPageModule,
     LoginFormModule,
     SignUpPageModule,
+    ChooseUserTypeModule,
   ],
   providers: [AuthService],
 })

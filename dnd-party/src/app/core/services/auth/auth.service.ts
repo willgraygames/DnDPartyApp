@@ -15,7 +15,6 @@ import {
   DocumentData,
   setDoc,
 } from 'firebase/firestore';
-import { Observable } from 'rxjs';
 import { LoginData } from './interfaces/login-data';
 import { Roles, User } from './interfaces/user';
 
@@ -65,7 +64,7 @@ export class AuthService {
     return setDoc(doc(this.userCollection, newUser.uid), newUser);
   }
 
-  getCurrentUserRoles() {
+  getCurrentUserData() {
     const userDocumentReference = doc(
       this.firestore,
       `users/${this.auth.currentUser?.uid}`

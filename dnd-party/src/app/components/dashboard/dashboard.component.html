@@ -1,2 +1,56 @@
-<button (click)="logout()">Logout</button>
-<button (click)="check()">Check</button>
+<div class="list-item">
+  <img src="https://i.imgur.com/O4800xQ.png" />
+  <div class="pl-3 self-stretch">
+    <h3>{{ user.email }}</h3>
+    <p>{{ user.email }}</p>
+    <p *ngIf="user.roles.master">Game Master</p>
+    <p *ngIf="user.roles.player">Player</p>
+  </div>
+</div>
+<div class="list-item">
+  <div class="self-stretch w-full">
+    <h3>Session</h3>
+    <p>Not currently in a session</p>
+    <p *ngIf="user.roles.master" class="pb-2">Create a new session!</p>
+    <p *ngIf="user.roles.player" class="pb-2">Join a session!</p>
+    <h2>1945</h2>
+  </div>
+  <div class="flex self-stretch items-end">
+    <button class="session-button">Create</button>
+  </div>
+</div>
+<button class="list-item text-left" (click)="logout()">
+  My Encounters
+  <tui-svg
+    class="absolute right-6"
+    [src]="'tuiIconChevronRightLarge'"
+  ></tui-svg>
+</button>
+<button class="list-item text-left" (click)="logout()">
+  My Characters
+  <tui-svg
+    class="absolute right-6"
+    [src]="'tuiIconChevronRightLarge'"
+  ></tui-svg>
+</button>
+<button class="list-item text-left" (click)="logout()">
+  Settings
+  <tui-svg
+    class="absolute right-6"
+    [src]="'tuiIconChevronRightLarge'"
+  ></tui-svg>
+</button>
+<button class="list-item text-left" (click)="logout()">
+  Logout
+  <tui-svg
+    class="absolute right-6"
+    [src]="'tuiIconChevronRightLarge'"
+  ></tui-svg>
+</button>
+<button class="list-item text-left" (click)="check()">
+  Check
+  <tui-svg
+    class="absolute right-6"
+    [src]="'tuiIconChevronRightLarge'"
+  ></tui-svg>
+</button>

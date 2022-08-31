@@ -44,6 +44,18 @@ h2 {
   color: var(--primary-text-color);
 }
 
+h3 {
+  font-size: large;
+  font-weight: 500;
+  color: var(--primary-text-color);
+}
+
+p {
+  font-size: small;
+  font-weight: 500;
+  color: var(--primary-text-color);
+}
+
 label {
   font-size:medium;
   font-weight: 700;
@@ -66,5 +78,27 @@ button {
 
   &:hover {
     background-color: var(--primary-button-color);
+  }
+}
+
+img {
+  height: 88px;
+  width: 88px;
+  border-radius: 8px;
+}
+
+.list-item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background-color: var(--primary-button-color);
+  margin-bottom: 8px;
+  border-radius: 8px;
+  padding: 12px;
+
+  &button {
+    text-align: left;
+    font-size: 28px;
+    height: 64px;
   }
 }

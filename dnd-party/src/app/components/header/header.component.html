@@ -1,9 +1,11 @@
-<div class="w-full h-min p-1 md:space-x-4">
-  <h1 class="text-center w-full md:text-left md:w-auto">D&D Party Manager</h1>
-  <tui-tabs tuiMobileTabs class="w-auto justify-center md:w-auto">
-    <button [style.color]="'white'" *ngFor="let item of menuItems" tuiTab [routerLink]="item.route">{{item.name}}</button>
+<div class="w-full h-full md:space-x-4">
+  <tui-tabs class="h-20 justify-center flex items-end md:w-auto">
+    <button
+      [style.color]="'white'"
+      *ngFor="let item of menuItems"
+      [routerLink]="item.route"
+    >
+      {{ item.name }}
+    </button>
   </tui-tabs>
-
-
 </div>
-

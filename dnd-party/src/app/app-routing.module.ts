@@ -42,11 +42,19 @@ const routes: Routes = [
     ...canActivate(redirectUnauthorizedToLogin),
   },
   {
-    path: 'member',
+    path: 'characters',
     loadChildren: () =>
-      import('./components/member/member/member.module').then(
-        (m) => m.MemberModule
-      ),
+      import(
+        './components/character/character-list/character-list.module'
+      ).then((m) => m.CharacterListModule),
+    ...canActivate(redirectUnauthorizedToLogin),
+  },
+  {
+    path: 'encounters',
+    loadChildren: () =>
+      import(
+        './components/encounter/encounter-list/encounter-list.module'
+      ).then((m) => m.EncounterListModule),
     ...canActivate(redirectUnauthorizedToLogin),
   },
   {

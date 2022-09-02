@@ -24,7 +24,6 @@ export class DashboardComponent implements OnInit, OnDestroy {
     this.user$ = this.authService.getCurrentUserData();
     this.subscription = this.user$.subscribe((data) => {
       this.user = data as User;
-      console.log(this.user);
     });
   }
 

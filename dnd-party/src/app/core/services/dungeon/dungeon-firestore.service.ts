@@ -16,14 +16,14 @@ import { Member } from 'src/app/components';
   providedIn: 'root',
 })
 export class DungeonFirestoreService {
-  private memberCollection: CollectionReference<DocumentData>;
+  private characterCollection: CollectionReference<DocumentData>;
 
   constructor(private readonly firestore: Firestore) {
-    this.memberCollection = collection(this.firestore, 'members');
+    this.characterCollection = collection(this.firestore, 'characters');
   }
 
   getAll() {
-    return collectionData(this.memberCollection, {
+    return collectionData(this.characterCollection, {
       idField: 'id',
     }) as Observable<Member[]>;
   }
@@ -34,7 +34,7 @@ export class DungeonFirestoreService {
   }
 
   create(member: Member) {
-    return addDoc(this.memberCollection, member);
+    return addDoc(this.characterCollection, member);
   }
 
   update(member: Member) {

@@ -1,1 +1,2 @@
-export * from './character';
+export * from './character-detail';
+export * from './character-list';

@@ -10,40 +10,46 @@ import {
   updateDoc,
 } from 'firebase/firestore';
 import { Observable } from 'rxjs';
-import { Member } from 'src/app/components';
+import { Character } from 'src/app/components';
 
 @Injectable({
   providedIn: 'root',
 })
 export class DungeonFirestoreService {
   private characterCollection: CollectionReference<DocumentData>;
+  private encounterCollection: CollectionReference<DocumentData>;
+  private sessionCollection: CollectionReference<DocumentData>;
 
   constructor(private readonly firestore: Firestore) {
     this.characterCollection = collection(this.firestore, 'characters');
+    this.encounterCollection = collection(this.firestore, 'encounters');
   }
 
   getAll() {
     return collectionData(this.characterCollection, {
       idField: 'id',
-    }) as Observable<Member[]>;
+    }) as Observable<Character[]>;
   }
 
   get(id: string) {
-    const memberDocumentReference = doc(this.firestore, `members/${id}`);
-    return docData(memberDocumentReference, { idField: 'id' });
+    const characterDocumentReference = doc(this.firestore, `characters/${id}`);
+    return docData(characterDocumentReference, { idField: 'id' });
   }
 
-  create(member: Member) {
-    return addDoc(this.characterCollection, member);
+  create(character: Character) {
+    return addDoc(this.characterCollection, character);
   }
 
-  update(member: Member) {
-    const memberDocumentReference = doc(this.firestore, `members/${member.id}`);
-    return updateDoc(memberDocumentReference, { ...member });
+  update(character: Character) {
+    const characterDocumentReference = doc(
+      this.firestore,
+      `characters/${character.id}`
+    );
+    return updateDoc(characterDocumentReference, { ...character });
   }
 
   delete(id: string) {
-    const memberDocumentReference = doc(this.firestore, `members/${id}`);
-    return deleteDoc(memberDocumentReference);
+    const characterDocumentReference = doc(this.firestore, `characters/${id}`);
+    return deleteDoc(characterDocumentReference);
   }
 }

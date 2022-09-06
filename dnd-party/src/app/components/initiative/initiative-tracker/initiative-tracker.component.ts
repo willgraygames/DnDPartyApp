@@ -3,7 +3,7 @@ import { doc } from 'firebase/firestore';
 import { first, firstValueFrom, map, Observable, take } from 'rxjs';
 import { DungeonFirestoreService } from 'src/app/core/services/dungeon/dungeon-firestore.service';
 import { TEST_INITIATIVE } from 'src/app/test-data/test-initiative';
-import { Member } from '../../member';
+import { Character } from '../../character';
 
 @Component({
   selector: 'initiative-tracker',
@@ -11,30 +11,30 @@ import { Member } from '../../member';
   styleUrls: ['./initiative-tracker.component.scss'],
 })
 export class InitiativeTrackerComponent implements OnInit {
-  members$: Observable<Member[]>;
-  members: Member[] = [];
+  characters$: Observable<Character[]>;
+  characters: Character[] = [];
 
   constructor(private readonly dungeonService: DungeonFirestoreService) {}
 
   initiative = TEST_INITIATIVE;
   ngOnInit(): void {
-    this.members$ = this.dungeonService.getAll();
+    this.characters$ = this.dungeonService.getAll();
     this.setMemberData();
   }
 
   cycleInitiative(): void {
-    this.members.push(this.members.shift()!);
+    this.characters.push(this.characters.shift()!);
   }
 
   async setMemberData() {
-    this.members$
+    this.characters$
       .pipe(
         map((data) =>
           data.sort((a, b) => 0 - (a.initiative < b.initiative ? -1 : 1))
         )
       )
       .subscribe((results) => {
-        this.members = results;
+        this.characters = results;
       });
   }
 }

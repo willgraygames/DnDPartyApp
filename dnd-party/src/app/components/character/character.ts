@@ -1,4 +1,4 @@
-export interface Member {
+export interface Character {
   id: string;
   name: string;
   initiative: number;
